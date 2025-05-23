@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us - JOMPO</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    function sendEmail(e) {
+      e.preventDefault();
+      emailjs.init("Qp6_r4z6sG4F1awfl");
+      emailjs.sendForm("service_ciao27d", "template_2ilyi8c", e.target)
+        .then(() => alert("Message sent!"))
+        .catch((error) => alert("Failed to send: " + error.text));
+    }
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #e9f5e1;
+      color: #333;
+    }
+    header {
+      background: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      padding: 30px;
+      max-width: 800px;
+      margin: auto;
+      background: #ffffff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    h2 {
+      color: #2e7d32;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input, textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+    button {
+      background: #2e7d32;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1b5e20;
+    }
+    footer {
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="resources.html">Resources</a>
+      <a href="community.html">Community</a>
+      <a href="dream.html">Dream Soccer</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>We’d Love to Hear From You!</h2>
+      <p>
+        Whether you're a farmer, innovator, partner, or supporter of green energy,
+        we value your feedback and inquiries. Please fill out the form below with
+        your message and contact information, and a JOMPO team member will respond
+        promptly. Your ideas help us grow sustainable solutions for agriculture and beyond.
+      </p>
+
+      <form onsubmit="sendEmail(event)">
+        <input type="text" name="from_name" placeholder="Your Name" required>
+        <input type="email" name="from_email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us at: maxwelogweno098@gmail.com</p>
+    <p>&copy; 2025 JOMPO Digital Solutions. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+
